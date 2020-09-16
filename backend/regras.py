@@ -1,5 +1,10 @@
 #Arquivo de regras de negócio
 
+import random
+
+def gerar_pontuacao():
+    return random.randint(1,999)
+
 def aprovar_credito(pontuacao, renda):
     '''
     verifica o credito para cada solicitacao baseada em sua pontuacao '''
