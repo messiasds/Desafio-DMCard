@@ -1,4 +1,4 @@
-#Arquivo de regras de negócio
+# regras de negócio
 
 import random
 
