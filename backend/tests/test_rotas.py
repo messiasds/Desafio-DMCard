@@ -5,12 +5,15 @@ def test_app_is_created(app):
 
     assert app.name == "backend.cartao"
 
-def test_raiz(client):
 
-    ''' testa a rota / '''
+def test_rota_solicitacao(client):
 
-    resp = client.get("/")
+    ''' testa a rota /solicitacoes '''
+
+    resp = client.get("/solicitacoes")
     assert resp.status_code == 200
+
+
 
 
 
