@@ -2,6 +2,7 @@ from flask import abort
 from flask import request
 from flask import Response
 from flask import Blueprint
+from flask import jsonify
 from markupsafe import escape
 from . import regras as regras_negocio
 from . import db
@@ -24,8 +25,8 @@ def teste(renda):
 @cartao.route('/solicitacoes', methods=['GET'])
 def mostrar_todas_solicitacoes():
     ret = Solicitacao.query.all()
-    #return solicitacao_schema.dumps(ret)
-    return schemas.solicitacao_schema_muitos.jsonify(ret)
+    return schemas.solicitacao_schema_muitos.dumps(ret, many=True)
+    #return schemas.solicitacao_schema_muitos.jsonify(ret)
 
 @cartao.route('/solicitacoes/<int:id>', methods=['GET'])
 def solicitacao_detalhes(id):
@@ -34,7 +35,8 @@ def solicitacao_detalhes(id):
     except:
         abort(404)
 
-    return schemas.solicitacao_schema.jsonify(solicitacao)
+    return schemas.solicitacao_schema.dumps(solicitacao)
+    #return schemas.solicitacao_schema.jsonify(solicitacao)
 
 @cartao.route('/solicitacoes', methods=['POST'])
 def salvar_solicitacao():

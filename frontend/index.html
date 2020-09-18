@@ -1,10 +1,27 @@
 <html>
     <head>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <title>
-            TESTE
+            
         </title>
     </head>
+    <script>
+        TESTE="KK"
+        axios.get('http://127.0.0.1:9090/solicitacoes')
+        .then(function(resp){
+            console.log(resp.data)
+            console.log("Merda")
+            TESTE = resp
+            //TESTE=JSON.parse(resp.data)
+        });
+
+    </script>    
+
+
     <body>
         <h1>TESTANDO NGINX IMAGE</h1>
     </body>
+
+
+
 </html>
