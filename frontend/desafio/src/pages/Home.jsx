@@ -3,6 +3,6 @@ import Titulo from '../components/Titulo'
 
 export default (props) =>  (
     <>
-    <Titulo titulo = 'Home' />
+    <Titulo titulo = 'home' />
     </>
 )
