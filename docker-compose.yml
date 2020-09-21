@@ -7,8 +7,9 @@ services:
   
   cliente:
     image: nginx
-    volumes: 
-      - ./frontend:/usr/share/nginx/html
+    build:
+      context: .
+      dockerfile: "Dockerfile-front"
     ports: 
       - "8080:80"
   
