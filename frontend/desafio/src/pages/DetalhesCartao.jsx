@@ -1,33 +1,57 @@
 import React, { Component } from 'react'
 import Titulo from '../components/Titulo'
 import axios from 'axios'
+import {Button, Box, Container} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
-class SolicitacaoDetalhes extends Component {
+export default class SolicitacaoDetalhes extends Component {
     constructor(props){
         super(props)
-        this.stage = {
-            dados:null
+        this.state = {
+            dados: props.location.state
         }
+        this.excluir = this.excluir.bind(this)
+
     }
 
-    componentDidMount(id){
-
-        const url= "htto://127.0.0.1/solicitacoes/" + id
-        axios.get(url)
+    excluir() {
+        
+        axios.delete('http://127.0.0.1:9090/solicitacoes/'+this.state.dados.id)
         .then((response) => {
-            let aux = JSON.stringify(response.data).parse()
-            this.setState({ dados:aux })
-            }
-        )
+            alert("Excluído com sucesso!");
+
+        })
     }
 
-    //getDados(){
-//
-    //}
-}
+    render(){
+        return (
+          <>
+            <Container maxWidth='sm'>
+            <Titulo titulo = 'Detalhes' />
+            <h2> Dados Pessoais </h2>
+            <p>Nome: {this.state.dados.nome} </p> 
+            <p>telefone: {this.state.dados.telefone} </p> 
+            <p>email: {this.state.dados.email} </p> 
+            <p>renda: {this.state.dados.renda} </p> 
+            <p>data nascimento: {this.state.dados.data_nascimento} </p> 
+            <h2> Dados do cartao </h2>
+            <p>Score: {this.state.dados.pontuacao} </p> 
+            <p>Credito: R$ {this.state.dados.credito} </p>
+            <Box display="flex" justifyContent='flex-end'>
+                <Box flexGrow={1}> 
+                  <Button variant='contained' onClick = {this.excluir} color='secondary' > Excluir </Button>
+                </Box>
+                <Box>
+                <Button variant='contained' component={Link} to="/lista" color='primary' > Voltar Lista </Button>
+                </Box>
+            </Box>
+        
+            </Container>
+      
+          </>
+        );
+    
 
-export default () =>  (
-    <>
-    <Titulo titulo = 'Detalhes' />
-    </>
-)
+    }
+
+}

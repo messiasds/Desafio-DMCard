@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
+import {ListItemText, ListItemAvatar, Avatar} from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 export default class Tabela extends Component {
 
@@ -12,13 +16,33 @@ export default class Tabela extends Component {
         this.get_dados()
     }
 
+    verificar_cartao_aprovado(){
+        return null
+
+    }
+
     montar_lista(dados){
 
         // cria um novo array contendo uma lista de <LI> com os dados do JSON
 
-        let linhas = dados.map((linha) =>
-            <li> { linha.nome }  - { linha.credito } - {linha.cartao_aprovado.toString() } </li>
-         )
+        let linhas = dados.map((linha) => 
+            
+            <ListItem button divider component={Link} to={
+                {
+                    pathname:"/detalhes",
+                    state: linha
+                }
+            }>
+                <ListItemAvatar>
+                  <Avatar  alt="Remy Sharp" src="https://media.istockphoto.com/vectors/check-mark-vector-tick-green-icon-in-circle-approved-symbol-checkmark-vector-id1261448792" >
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText >
+                { linha.nome }  - R$ { linha.credito } {/*linha.cartao_aprovado.toString() */} 
+                </ListItemText>
+            </ListItem >
+        )
+  
          this.setState({lista_li:linhas})
     }
 
@@ -36,10 +60,11 @@ export default class Tabela extends Component {
     render(){
         return (
             <>
-            <ul> 
-                { this.state.lista_li }
-            </ul>
+            <List >
+                { this.state.lista_li}
+            </List>
             </>
+
         )
     }
 }
