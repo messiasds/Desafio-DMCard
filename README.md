@@ -1,3 +1,13 @@
+# Execução
+
+  a API está hospedada em um EC2 na AWS rodando docker, no ip: http://15.228.3.56:9090/
+  maiores detalhes da API na pasta **backend**
+  
+  :warning: ** O Frontend , devido a problemas com o script do docker para buildar o projeto em React, não está hospedado ainda :/**
+
+
+# Regras do desafio
+
 # GYPZ- Tech Challenge
 
 A **DMCard** está em busca de pessoas incríveis que integrem nosso laboratório para criarmos incríveis produtos digitais, e gostaríamos de ter você aqui conosco.
