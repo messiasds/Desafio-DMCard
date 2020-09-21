@@ -1,14 +1,29 @@
 # Execução
 
-  a API está hospedada em um EC2 na AWS rodando docker, no ip: http://15.228.3.56:9090/
-  maiores detalhes da API na pasta **backend**
+  a API e o cliente em React estão hospedado em uma instâcia (free :D) da EC2 na AWS.
+
+  [acessar projeto na AWS](http://15.228.3.56/)
+
+  detalhes da API na pasta **backend**
+  detalhes sobre o cliente **frontend**
   
-  :warning: **O Frontend , devido a problemas com o script do docker para buildar o projeto em React, não está hospedado ainda :/**
+# Tecnologias utilizadas
+
+* AWS - EC2
+* Nginx
+* Docker
+* Docker-compose
 
 
-# Regras do desafio
 
-# GYPZ- Tech Challenge
+
+*************
+
+
+
+## Regras do desafio
+
+## GYPZ- Tech Challenge
 
 A **DMCard** está em busca de pessoas incríveis que integrem nosso laboratório para criarmos incríveis produtos digitais, e gostaríamos de ter você aqui conosco.
 
@@ -16,7 +31,7 @@ Para iniciar o processo, pedimos um teste que não vai tomar muito do seu tempo 
 
 Você não precisa entregar ambos, mas qualquer adicional as suas habilidades específicas é interessante.
 
-# Requisitos do desafio
+## Requisitos do desafio
 
 Deve se criar uma aplicação que permitirá a solicitação de um cartão de crédito, onde o usuário irá inserir suas informações básicas e o sistema irá fazer uma análise da liberação do cartão.
 
