@@ -34,8 +34,10 @@ export default class Tabela extends Component {
                 }
             }>
                 <ListItemAvatar>
-                  <Avatar  alt="Remy Sharp" src="https://media.istockphoto.com/vectors/check-mark-vector-tick-green-icon-in-circle-approved-symbol-checkmark-vector-id1261448792" >
-                  </Avatar>
+                    { linha.cartao_aprovado
+                      ? <Avatar  alt="Remy Sharp" src="https://media.istockphoto.com/vectors/check-mark-vector-tick-green-icon-in-circle-approved-symbol-checkmark-vector-id1261448792" />
+                      : <Avatar  alt="Remy Sharp" src="https://png.pngtree.com/png-vector/20190618/ourlarge/pngtree-true-and-false-symbols-accept-rejected-for-evaluation-vector-simple-png-image_1502129.jpg" />
+                    }
                 </ListItemAvatar>
                 <ListItemText >
                 { linha.nome }  - R$ { linha.credito } {/*linha.cartao_aprovado.toString() */} 

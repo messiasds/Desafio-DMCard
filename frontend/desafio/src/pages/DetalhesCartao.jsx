@@ -35,6 +35,11 @@ export default class SolicitacaoDetalhes extends Component {
             <p>renda: {this.state.dados.renda} </p> 
             <p>data nascimento: {this.state.dados.data_nascimento} </p> 
             <h2> Dados do cartao </h2>
+            <h4> {this.state.dados.cartao_aprovado
+                   ? "CARTÃO APROVADO"
+                   : "CARTÃO NÃO APROVADO!" 
+                  }
+            </h4>
             <p>Score: {this.state.dados.pontuacao} </p> 
             <p>Credito: R$ {this.state.dados.credito} </p>
             <Box display="flex" justifyContent='flex-end'>
