@@ -1,15 +1,16 @@
 version: '3'
 services:
   servidor:
-    build: .
+    build: 
+      context: .
+      dockerfile: "Dockerfile-servidor"
     ports: 
       - "9090:5000"
   
   cliente:
-    image: nginx
     build:
       context: .
-      dockerfile: "Dockerfile-front"
+      dockerfile: "Dockerfile-cliente"
     ports: 
       - "8080:80"
   
