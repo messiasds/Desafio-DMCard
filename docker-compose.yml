@@ -6,6 +6,8 @@ services:
       dockerfile: "Dockerfile-servidor"
     ports: 
       - "9090:5000"
+    networks:
+      - rede_interna
   
   cliente:
     build:
@@ -13,7 +15,11 @@ services:
       dockerfile: "Dockerfile-cliente"
     ports: 
       - "80:80"
-  
+    networks:
+      - rede_interna
+networks:
+  rede_interna:
+    driver:  bridge  
 
       
     
