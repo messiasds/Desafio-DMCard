@@ -34,7 +34,6 @@ export default class Tabela extends Component {
                     pathname:"/detalhes",
                     state: linha
                 }
-                ,className={}
             }>
                 <ListItemAvatar>
                     { linha.cartao_aprovado
