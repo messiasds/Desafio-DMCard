@@ -4,17 +4,11 @@ import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import {ListItemText, ListItemAvatar, Avatar} from '@material-ui/core';
 import {Link} from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
 
 
 export default class Tabela extends Component {
 
-    const useStyles = makeStyles((theme) => ({
-        root: {
-          backgroundColor: theme.palette.background.paper,
-        },
-      }));
-
+    
     state = {
       lista_li: []
     };
@@ -40,6 +34,7 @@ export default class Tabela extends Component {
                     pathname:"/detalhes",
                     state: linha
                 }
+                ,className={}
             }>
                 <ListItemAvatar>
                     { linha.cartao_aprovado
