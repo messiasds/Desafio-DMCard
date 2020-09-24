@@ -8,7 +8,6 @@ Front bem básico, para aproveitar a oportunidade do desafio e conhecer React, j
 * React
 * Matetial-ui 
 
-## Prints
 
 
 

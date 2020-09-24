@@ -52,12 +52,13 @@ campos **cartao_aprovado** , **potuacao** , **credito** são gerados com base na
 
 **Rotas:**
 
-GET /Solicitacoes - Exibe todas as solicitações de cartão
+GET /solicitacoes - Exibe todas as solicitações de cartão
 
-GET /Solicitacoes/{id} - Motra os detalhes da solicitação específicada pelo id
+GET /solicitacoes/{id} - Motra os detalhes da solicitação específicada pelo id
 
-DELETE /Solicitacoes/{id} - Exclui a solicitação selecionada específicada pelo id
+POST /solicitacoes - cria uma nova solicitação de cartão 
 
+DELETE /solicitacoes/{id} - Exclui a solicitação selecionada específicada pelo id
 
 
 

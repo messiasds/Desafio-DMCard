@@ -1,12 +1,14 @@
-# Execução
+# Resultados
 
   a API e o cliente em React estão hospedado em uma instâcia (free :D) da EC2 na AWS.
 
   [acessar projeto na AWS](http://15.228.3.56/)
 
   detalhes da API na pasta **backend**
-  detalhes sobre o cliente **frontend**
   
+  detalhes sobre o cliente **frontend**
+
+
 # Tecnologias utilizadas
 
 * AWS - EC2
@@ -14,7 +16,26 @@
 * Docker
 * Docker-compose
 
+# Executando o projeto localmente 
 
+Para executar o projeto localmente, é necessário ter instalado:
+
+* Docker 
+* Docker-compose
+
+**Passos**
+
+clonar o projeto
+
+entrar pelo terminal na pasta do projeto:  **Desafio-DMCard/**
+
+Usar o comando: **docker-compose up** (como root)
+
+acessar o serviço Web no ip **127.0.0.1**
+
+obs: o servidor web, usa porta padrãom porta 80
+
+A API estará disponível no ip **127.0.0.1:9090**
 
 
 *************
